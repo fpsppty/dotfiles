@@ -19,6 +19,10 @@ function prompt {
     "[async init]: PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) ";
 }
 
+if (Get-Command mise -ErrorAction SilentlyContinue) {
+    mise activate pwsh | Out-String | Invoke-Expression
+}
+
 # Load modules asynchronously to reduce shell startup time
 [System.Collections.Queue]$__initQueue = @(
     {
@@ -54,7 +58,7 @@ function prompt {
             New-Alias -Name 'Set-PoshContext' -Value 'Set-PoshContexts' -Scope Global -Force
         } | Import-Module -Global
 
-        oh-my-posh init pwsh --config (Join-Path (Split-Path $PROFILE) matt.omp.json) | Invoke-Expression
+        oh-my-posh init pwsh --config (Join-Path (Split-Path $PROFILE) theme.omp.json) | Invoke-Expression
         oh-my-posh completion powershell | Out-String | Invoke-Expression
         $Env:POSH_GIT_ENABLED = $true
     },
