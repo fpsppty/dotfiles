@@ -96,6 +96,15 @@ properties:
         id: Microsoft.VisualStudioCode
         ensure: Present
         source: winget
+    ### Install Explorer Pathcher
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: explorerpatcher
+      directives:
+        description: Install ExplorerPatcher
+        allowPrerelease: true
+      settings:
+        id: valinet.ExplorerPatcher.Prerelease
+        source: winget
     ### Install PowerToys
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: powertoys
