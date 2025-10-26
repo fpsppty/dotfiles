@@ -69,7 +69,7 @@ properties:
       settings:
         id: GitHub.cli
         source: winget
-    ### Install GitHub CLI
+    ### Install Chezmoi
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chezmoi
       directives:
