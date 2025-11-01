@@ -22,3 +22,6 @@ apply = ["defer"]
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
