@@ -1,6 +1,8 @@
 {
-    "extractor":
-    {
-        "base-directory": "~/Pictures/dl"
+    "extractor": {
+        "base-directory": "~/Pictures/dl",
+        "default": {
+            "directory": "{title.replace(' ', '_')}"
+        }
     }
 }
