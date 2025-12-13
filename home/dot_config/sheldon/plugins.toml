@@ -23,5 +23,8 @@ apply = ["defer"]
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
 
+[plugins.zsh-you-should-use]
+github = "MichaelAquilina/zsh-you-should-use"
+
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
