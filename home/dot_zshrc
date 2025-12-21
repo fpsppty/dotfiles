@@ -1,3 +1,4 @@
+export PATH=$PATH:$HOME/.local/bin/
 HISTORY_IGNORE="(cd|cd ..|cls|l[alsh]#( *)#|open .|pwd|exit)"
 
 HISTFILE=~/.zsh_history
