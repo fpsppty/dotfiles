@@ -1,0 +1,4 @@
+{{- if eq .chezmoi.os "windows" }}
+Documents/*
+!Documents/*PowerShell/ # ignore a folder, except for Windows PowerShell profiles
+{{- end }}
