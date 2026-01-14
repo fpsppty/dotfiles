@@ -1,0 +1,6 @@
+# Launch a panel such as yambar or waybar.
+waybar >/dev/null 2>&1 &
+
+fcitx5 &
+kanshi &
+steam -silent &
