@@ -1,5 +1,6 @@
-# Launch a panel such as yambar or waybar.
-waybar >/dev/null 2>&1 &
+# swww-daemon &
+waypaper --restore &
+waybar &
 
 fcitx5 &
 kanshi &

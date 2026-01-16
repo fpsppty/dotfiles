@@ -12,27 +12,33 @@
   </theme>
 
   <keyboard>
-    <default />
-    <!-- Use a different terminal emulator -->
-    <keybind key="W-Return">
-      <action name="Execute" command="foot" />
-    </keybind>
-    <!--
-      Remove a previously defined keybind
-      A shorter alternative is <keybind key="W-F4" />
-    -->
-    <keybind key="W-F4">
-      <action name="None" />
-    </keybind>
+    <layoutScope>global</layoutScope>
+    <keybind key="A-Tab"><action name="NextWindow" /></keybind>
+    <keybind key="A-S-Tab"><action name="PreviousWindow" /></keybind>
+    <keybind key="A-F4"><action name="Close" /></keybind>
+    <keybind key="W-Return"><action name="Execute" command="kitty" /></keybind>
+    <keybind key="W-E"><action name="Execute" command="nautilus" /></keybind>
+    <keybind key="A-Space"><action name="Execute" command="wofi --show drun" /></keybind>
+    <keybind key="W-Left"><action name="SnapToEdge" direction="left" combine="yes" /></keybind>
+    <keybind key="W-Right"><action name="SnapToEdge" direction="right" combine="yes" /></keybind>
+    <keybind key="W-Up"><action name="SnapToEdge" direction="up" combine="yes" /></keybind>
+    <keybind key="W-Down"><action name="SnapToEdge" direction="down" combine="yes" /></keybind>
+    <keybind key="W-S-Up"><action name="MoveToOutput" direction="up" wrap="no" /></keybind>
+    <keybind key="W-S-Down"><action name="MoveToOutput" direction="down" wrap="no" /></keybind>
+    <keybind key="W-S-Left"><action name="MoveToOutput" direction="left" wrap="no" /></keybind>
+    <keybind key="W-S-Right"><action name="MoveToOutput" direction="right" wrap="no" /></keybind>
+    <keybind key="XF86_AudioLowerVolume"><action name="Execute" command="amixer sset Master 5%-" /></keybind>
+    <keybind key="XF86_AudioRaiseVolume"><action name="Execute" command="amixer sset Master 5%+" /></keybind>
+    <keybind key="XF86_AudioMute"><action name="Execute" command="amixer sset Master toggle" /></keybind>
+    <keybind key="XF86_MonBrightnessUp"><action name="Execute" command="brightnessctl set +10%" /></keybind>
+    <keybind key="XF86_MonBrightnessDown"><action name="Execute" command="brightnessctl set 10%-" /></keybind>
   </keyboard>
 
   <mouse>
     <default />
     <!-- Show a custom menu on desktop right click -->
     <context name="Root">
-      <mousebind button="Right" action="Press">
-        <action name="ShowMenu" menu="some-custom-menu" />
-      </mousebind>
+      <mousebind button="Right" action="Press"><action name="ShowMenu" menu="some-custom-menu" /></mousebind>
     </context>
   </mouse>
 

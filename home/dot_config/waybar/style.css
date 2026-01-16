@@ -1,126 +1,70 @@
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
 }
 
 window#waybar {
-    background-color: #0f1117;
-    font-size: 14px;
-    border-radius: 0px;
-    margin: 0px;
-    padding: 0;
+    background-color: #82949e;
+    color: #4a5353;
+    border: 2px solid #4a5353;
+    box-shadow: inset -2px 2px 0 0px #a1acae, inset 2px -2px 0px 0px #687677;
 }
 
-/* Left-most: Arch icon */
-#custom-appmenu {
-  font-size: 4;
-  background-image: url('/usr/share/icons/cachyos.svg');
-  background-color: #1e222a;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 0px 12px;
-    
-}
-
-/* Right-most: Clock */
-#clock {
-    font-size: 14px;
-    background-color: #1e222a;
-    color: #c0c0c0;
-    border-radius: 0px;
-    padding: 0px 8px;
-}
-
-/* Active window title */
-#window {
-    font-size: 14px;
-    font-weight: 800;
-    color: #e0e0e0;
-    border-radius: 0px;
-    padding: 4px 12px;
-    background-color: #1e222a;
-}
-
-/* Workspace container */
-#niri-workspaces {
-    background: #1e222a;
-    font-weight: bold;
-    border-radius: 0px;
-    font-size: 8px;
-    color: #e0e0e0;
-}
-
-/* Individual workspace buttons */
-#niri-workspaces button {
-    border-radius: 0px;
-    font-size: 8px;
-}
-
-#workspaces button.active {
-    border-radius: 0px;
-    color: #0f1117;
-    background: #00ac89;
-}
-
-#workspaces button:hover {
-    border-radius: 0px;
-    background: #0d3531;
-    border-width: 0px;
-}
-
-/* Power/exit button */
-#custom-exit {
-    background-color: #00ac89;
-    font-size: 14px;
-    font-weight: 800;
-    color: #0f1117;
-    padding: 0px 6px;
-    margin: 2px 2px 2px 0;
-}
-
-/* Tooltips */
-tooltip {
-    border-radius: 12px;
-    background-color: #0f1117;
-    color: #c0c0c0;
-    padding: 4px 8px;
-}
-
-/* Taskbar */
-#taskbar {
-    background-color: #1e222a;
-    margin: 0px;
-    border-radius: 0px;
-    font-weight: normal;
-}
-
-/* All system info modules */
-#backlight,
-#pulseaudio,
-#network,
-#bluetooth,
+#custom-firefox,
+#custom-anki,
+#custom-power,
 #battery,
-#tray,
-#custom-updates,
-#custom-notification {
-    background-color: #1e222a;
-    font-size: 14px;
-    font-weight: 800;
-    color: #c0c0c0;
-    border-radius: 0px;
-    padding: 4px 10px;
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+background-color: #b3b5b2;
+margin-left: 4px;
+margin-right: 4px;
+margin-top: 2px;
+margin-bottom: 2px;
+padding-top: 8px;
+padding-bottom: 8px;
+border: 1px solid #4a5353;
+box-shadow: inset 2px -2px 0px 0px #cccac2, inset -2px 2px 0px 0px #e5dfd3;
 }
 
-/* Battery critical warning */
-#battery.critical:not(.charging) {
-    background-color: #e65100;
-    color: #ffffff;
-    animation: blink 0.5s linear infinite alternate;
+#custom-firefox, #custom-anki, #battery, #network, #pulseaudio {
+font-size: 16px;
 }
 
-@keyframes blink {
-    to {
-        background-color: #0f1117;
-        color: #ffffff;
-    }
+#custom-power {
+margin-top: 4px;
+}
+
+#battery {
+margin-bottom: 4px;
+}
+
+#cpu {
+border-bottom: none;
+margin-bottom: -2px;
+box-shadow: inset 2px 0px 0px 0px #cccac2, inset -2px 2px 0px 0px #e5dfd3;
+}
+
+#memory {
+margin-top: -2px;
+border-top: none;
+box-shadow: inset 2px -2px 0px 0px #cccac2, inset -2px 0px 0px 0px #e5dfd3;
+}
+
+#pulseaudio.microphone {
+border-bottom: none;
+margin-top: 2px;
+margin-bottom: -2px;
+border: 1px solid #4a5353;
+border-bottom: none;
+box-shadow: inset 2px -2px 0px 0px #cccac2, inset -2px 2px 0px 0px #e5dfd3;
+}
+
+#pulseaudio {
+margin-top: -4px;
+border-top: none;
+box-shadow: inset 2px -2px 0px 0px #cccac2, inset -2px 0px 0px 0px #e5dfd3;
 }
