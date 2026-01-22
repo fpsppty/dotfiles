@@ -5,3 +5,4 @@ waybar &
 fcitx5 &
 kanshi &
 steam -silent &
+vesktop --start-minimized &
