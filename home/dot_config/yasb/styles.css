@@ -382,86 +382,29 @@
     padding: 0;
     margin-right: 0;
 }
-/*GITHUB WIDGET*/
-.github-widget {
-    padding: 0;
-}
-.github-widget .icon {
-    font-size: 16px;
-}
-/*GITHUB DROPDOWN*/
-.github-menu    {
-    background-color:  rgba(17, 17, 27, 0.2);
-    max-height: 500px;
-    min-height: 500px;
-    min-width: 420px;
-}
-.github-menu .header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 15px;
-    font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 8px;
-    color: white;
-    background-color: rgba(17, 17, 27, 0.75);
-}
-.github-menu .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 12px;
-    padding: 4px 8px 6px 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #9399b2;
-    background-color: rgba(17, 17, 27, 0.75);
-}
-.github-menu .contents {
-    background-color:  rgba(17, 17, 27, 0.2);
-}
-.github-menu .contents .item {
-    min-height: 40px;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
-}
-.github-menu .contents .item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
-}
-.github-menu .contents .item .title,
-.github-menu .contents .item .description {
-    color: #9399b2;
-    font-family: Segoe UI;
-}
-.github-menu .contents .item .title {
-    font-size: 14px;
-    font-weight: 600; 
-}
-.github-menu .contents .item .description {
-    font-size: 12px;
-    font-weight: 500
-}
-.github-menu .contents .item.new .title,
-.github-menu .contents .item.new .description {
-    color: #ffffff
-}
-.github-menu .contents .item .icon {
-    font-size: 16px;
-    padding-right: 0;
-    padding-left: 8px;
-    padding-right: 4px;
-    color: #9399b2;
-}
-.github-menu .contents .item.new .icon {
-    color: #3fb950;
-}
 /*TASKBAR*/
 .taskbar-widget {
-    background-color: var(--surface1);
-    margin-top: 3px;
-    margin-bottom: 3px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-.taskbar-widget .app-icon {
-    padding: 0 6px;
-    margin: 0px;
+.taskbar-widget .app-container {
+    padding: 0 4px;
+}
+.taskbar-preview {
+    border-radius: 8px; 
+    background-color: #2b2c2d; 
+}
+.taskbar-preview.flashing { 
+    background-color: #7f434a;
+}
+.taskbar-preview .header {
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.taskbar-preview .header .title {
+	font-family: "Bahnscrift", Tahoma, Geneva, Verdana, sans-serif;
+    color: #d6d6d6;
+    font-weight: 600;
+    font-size: 13px;
 }
 /*APPS WIDGET*/
 .apps-widget {

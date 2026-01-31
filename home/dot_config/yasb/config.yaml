@@ -1,10 +1,6 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
-komorebi:
-  start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
 bars:
   primary-bar:
     enabled: true
@@ -28,26 +24,22 @@ bars:
       height: 30
     padding:
      #top: 6 # 4 4 2 4
-      left: 6
+      left: 2
       bottom: 0
-      right: 6
+      right: 2
     widgets:
       left:
         [
           "home",
-          "komorebi_workspaces",
-          "active_window",
+          "taskbar",
         ]
       center:
         ["clock", "apps"]
       right:
         [
+          "systray",
           "media",
-          "taskbar",
           "volume",
-          "weather",
-          "github",
-          "disk",
           "power_menu"
         ]
 widgets:
@@ -64,7 +56,7 @@ widgets:
       system_menu: true
       power_menu: false
       blur: true
-      round_corners: true
+      round_corners: false
       round_corners_type: "normal"
       border_color: ""
       distance: 5
@@ -84,53 +76,6 @@ widgets:
         system: "System Settings"
         about: "About This PC"
         task_manager: "Task Manager"
-  komorebi_workspaces:
-    type: "komorebi.workspaces.WorkspaceWidget"
-    options:
-        label_offline: "\u26a1 Offline"
-        label_workspace_btn: ""
-        label_workspace_active_btn: ""
-        label_workspace_populated_btn: ""
-        label_default_name: "{index}"
-        label_zero_index: false
-        hide_empty_workspaces: false
-        hide_if_offline: true
-        animation: true
-  weather:
-    type: "yasb.weather.WeatherWidget"
-    options:
-      label: "<span>{icon}</span> {temp}"
-      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
-      show_alerts: true
-      update_interval: 600 # Update interval in seconds, Min 600 seconds
-      hide_decimal: true
-      units: "metric" # Can be 'metric' or 'imperial'
-      location: "Tres Rios, Cartago" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
-      callbacks:
-        on_left: "toggle_card"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"
-      icons: 
-        sunnyDay: "\ue30d"
-        clearNight: "\ue32b"
-        cloudyDay: "\udb81\udd99"
-        cloudyNight: "\ue311"
-        rainyDay: "\udb81\ude7e"
-        rainyNight: "\udb81\ude7e"
-        snowyIcyDay: "\udb81\udd98"
-        snowyIcyNight: "\udb81\udd98"
-        blizzard: "\uebaa"
-        default: "\uebaa"
-      weather_card: 
-        blur: True
-        round_corners: True
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-        distance: 6
-        icon_size: 64
   media:
       type: "yasb.media.MediaWidget"
       options:
@@ -151,19 +96,6 @@ widgets:
           next_track: ""
           play: "<span>\uf001</span>"
           pause: "<span>\uf001</span>"
-  active_window:
-    type: "yasb.active_window.ActiveWindowWidget"
-    options:
-      label: ""
-      #label: "{win[title]}"
-      #label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
-      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
-      label_no_window: ""
-      label_icon: true
-      label_icon_size: 14
-      max_length: 36
-      max_length_ellipsis: "..."
-      monitor_exclusive: true
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -180,31 +112,11 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%a %b %d %H:%M}"
+      label: "{%Y-%m-%d %H:%M (%A)}"
       label_alt: "{%A, %d %B %Y %H:%M}"
       timezones: []
       calendar:
         alignment: "center"
-  disk:
-    type: "yasb.disk.DiskWidget"
-    options:
-        label: "<span>\uf473</span>"
-        label_alt: "<span>\uf473</span>"
-        update_interval: 60
-        group_label:
-          volume_labels: ["C", "D", "E", "F"]
-          show_label_name: false
-          blur: True
-          round_corners: True
-          round_corners_type: "small"
-          border_color: "System"
-          alignment: "right"
-          direction: "down"
-          distance: 6
-        callbacks:
-          on_left: "toggle_group"
-          on_middle: "toggle_label"
-          on_right: "exec explorer C:\\" # Open disk C in file explorer
   power_menu:
       type: "yasb.power_menu.PowerMenuWidget"
       options:
@@ -212,7 +124,7 @@ widgets:
         uptime: True
         blur: False
         blur_background: True
-        animation_duration: 250 # Milisecond 
+        animation_duration: 150 # Milisecond 
         button_row: 5 # Number of buttons in row, min 1 max 5
         buttons:
           signout: ["\udb80\udf43","Sign out"]
@@ -220,39 +132,23 @@ widgets:
           restart: ["\uead2","Restart"]
           hibernate: ["\uf28e","Hibernate"]
           cancel: ["\udb81\udf3a","Cancel"]
-  github:
-    type: "yasb.github.GithubWidget"
-    options:
-      label: "<span>\ueba1</span>"
-      label_alt: "Notifications {data}" # {data} return number of unread notification
-      token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
-      max_notification: 20 # Max number of notification displaying in menu max: 50
-      only_unread: false # Show only unread or all notifications; 
-      max_field_size: 54 # Max characters in title before truncation.
-      update_interval: 300 # Check for new notification in seconds
-      menu:
-        blur: True # Enable blur effect for the menu
-        round_corners: True # Enable round corners for the menu (this option is not supported on Windows 10)
-        round_corners_type: "normal" # Set the type of round corners for the menu (normal, small) (this option is not supported on Windows 10)
-        border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
-        alignment: "right"
-        direction: "down"
-        distance: 6
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
       animation:
         enabled: true
       icon_size: 16
-      ignore_apps:
-        processes: []
-        titles: []
-        classes: []
+      preview:
+        enabled: false
+        width: 240
+        delay: 400
+        padding: 8
+        margin: 8
       container_padding:
         top: 0
-        left: 0
+        left: 2
         bottom: 0
-        right: 0
+        right: 2
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
@@ -267,4 +163,22 @@ widgets:
         - { icon: "\uf422", launch: "launcher" }
         - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
         - { icon: "\uf489", launch: "wt" }
-        - { icon: "\uf268", launch: "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe" }
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "▼"
+      label_expanded: "▶"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 16 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: true
+      show_unpinned_button: false
+      show_battery: false
+      show_volume: false
+      show_network: false
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
