@@ -96,24 +96,6 @@ properties:
         id: Microsoft.VisualStudioCode
         ensure: Present
         source: winget
-    ### Install Explorer Pathcher
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: explorerpatcher
-      directives:
-        description: Install ExplorerPatcher
-        allowPrerelease: true
-      settings:
-        id: valinet.ExplorerPatcher.Prerelease
-        source: winget
-    ### Install PowerToys
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: powertoys
-      directives:
-        description: Install Microsoft.PowerToys
-        allowPrerelease: true
-      settings:
-        id: Microsoft.PowerToys
-        source: winget
     ### Install Firefox
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       directives:
@@ -130,24 +112,6 @@ properties:
       settings:
         id: GiorgioTani.PeaZip
         source: winget
-    ### Install Google Drive
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: GoogleDrive
-      directives:
-        description: Install Google Drive
-        allowPrerelease: true
-      settings:
-        id: Google.GoogleDrive
-        source: winget
-    ### Install Obsidian
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Obsidian
-      directives:
-        description: Install Obsidian
-        allowPrerelease: true
-      settings:
-        id: Obsidian.Obsidian
-        source: winget
     ### Install Steam
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Steam
@@ -156,33 +120,6 @@ properties:
         allowPrerelease: true
       settings:
         id: Valve.Steam
-        source: winget
-    ### Install Discord
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Discord
-      directives:
-        description: Install Discord
-        allowPrerelease: true
-      settings:
-        id: Discord.Discord
-        source: winget
-    ### Install Eartrumpet
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Eartrumpet
-      directives:
-        description: Install Eartrumpet
-        allowPrerelease: true
-      settings:
-        id: File-New-Project.EarTrumpet
-        source: winget
-    ### Install Bitwarden
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Bitwarden
-      directives:
-        description: Install Bitwarden
-        allowPrerelease: true
-      settings:
-        id: Bitwarden.Bitwarden
         source: winget
     ### Install PotPlayer
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -216,74 +153,6 @@ properties:
       settings:
          UserEmail: "128275033+fpsppty@users.noreply.github.com"
          ConfigLocation: "Global"
-    ### Configure PowerToys
-    - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
-      dependsOn:
-        - powertoys
-      directives:
-        description: Configure PowerToys
-      settings:
-        AdvancedPaste:
-          Enabled: true
-        AlwaysOnTop:
-          Enabled: false
-        Awake:
-          Enabled: false
-        ColorPicker:
-          Enabled: false
-        CropAndLock:
-          Enabled: false
-        EnvironmentVariables:
-          Enabled: true
-        FancyZones:
-          Enabled: false
-        FileLocksmith:
-          Enabled: false
-        FindMyMouse:
-          Enabled: false
-        Hosts:
-          Enabled: true
-        ImageResizer:
-          Enabled: false
-        KeyboardManager:
-          Enabled: true
-          # TODO: Caps2Ctrl
-        MeasureTool:
-          Enabled: false
-        MouseHighlighter:
-          Enabled: false
-        MouseJump:
-          Enabled: false
-        MousePointerCrosshairs:
-          Enabled: false
-        MouseWithoutBorders:
-          Enabled: false
-        NewPlus:
-          Enabled: false
-        Peek:
-          Enabled: false
-        PowerAccent:
-          Enabled: false
-        PowerLauncher:
-          Enabled: true
-          OpenPowerLauncher: "Alt+Space"
-          IgnoreHotkeysInFullscreen: true
-          ClearInputOnLaunch: true
-        PowerOcr:
-          Enabled: false
-        PowerPreview:
-          Enabled: false
-        PowerRename:
-          Enabled: false
-        RegistryPreview:
-          Enabled: true
-          DefaultRegApp: true
-        ShortcutGuide:
-          Enabled: false
-        Workspaces:
-          Enabled: false
-        GeneralSettings:
-          Startup: true
     - resource: PSDscResources/Script
       id: SetXDGConfigHome
       directives:

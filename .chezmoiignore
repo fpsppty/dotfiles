@@ -1,4 +1,14 @@
-{{- if eq .chezmoi.os "windows" }}
-Documents/*
-!Documents/*PowerShell/ # ignore a folder, except for Windows PowerShell profiles
+{{- if ne .chezmoi.os "windows" }}
+Documents
+AppData
+{{- end }}
+
+{{ if eq .chezmoi.os "windows" }}
+.zshrc
+.config/fcitx5
+.config/kanshi
+.config/kanshi
+.config/labwc
+.config/sheldon
+.config/waybar
 {{- end }}
