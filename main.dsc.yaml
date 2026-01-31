@@ -86,6 +86,15 @@ properties:
       settings:
         id: Microsoft.PowerShell
         source: winget
+    ### Install Flow Launcher
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: flowlauncher
+      directives:
+        description: Install Flow Launcher
+        allowPrerelease: true
+      settings:
+        id: Flow-Launcher.Flow-Launcher
+        source: winget
     ### Install Visual Studio Code
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vscode
