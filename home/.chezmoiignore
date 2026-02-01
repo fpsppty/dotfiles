@@ -1,9 +1,7 @@
-{{- if ne .chezmoi.os "windows" }}
+{{ if ne .chezmoi.os "windows" }}
 Documents
 AppData
-{{- end }}
-
-{{ if eq .chezmoi.os "windows" }}
+{{ else }}
 .zshrc
 .config/fcitx5
 .config/kanshi
@@ -11,4 +9,4 @@ AppData
 .config/labwc
 .config/sheldon
 .config/waybar
-{{- end }}
+{{ end }}

@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "windows" }}
+  {{ range .catppuccinFlavoursTitleCase }}
+  ["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]
+    type = "archive-file"
+    url = "https://github.com/catppuccin/flow-launcher/archive/main.tar.gz"
+    path = "themes/Catppuccin {{ . }}.xaml"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "1h"
+  {{ end }}
+{{ end }}
