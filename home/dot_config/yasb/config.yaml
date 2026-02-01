@@ -34,12 +34,14 @@ bars:
           "taskbar",
         ]
       center:
-        ["clock", "apps"]
+        [
+          "media",
+        ]
       right:
         [
           "systray",
-          "media",
           "volume",
+          "clock",
           "power_menu"
         ]
 widgets:
@@ -112,7 +114,7 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%Y-%m-%d %H:%M (%A)}"
+      label: "{%H:%M}"
       label_alt: "{%A, %d %B %Y %H:%M}"
       timezones: []
       calendar:
@@ -149,20 +151,6 @@ widgets:
         left: 2
         bottom: 0
         right: 2
-  apps:
-    type: "yasb.applications.ApplicationsWidget"
-    options:
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
-      label: "{data}"
-      app_list:
-        - { icon: "\uf0a2", launch: "notification_center" }
-        - { icon: "\uf422", launch: "launcher" }
-        - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-        - { icon: "\uf489", launch: "wt" }
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
