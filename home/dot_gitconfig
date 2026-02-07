@@ -2,4 +2,4 @@
 	name = fpsppty
 	email = 128275033+fpsppty@users.noreply.github.com
 [ghq]
-	root = ~/.ghq
+	root = ~/dev
