@@ -3,3 +3,7 @@
 	email = 128275033+fpsppty@users.noreply.github.com
 [ghq]
 	root = ~/dev
+[init]
+	defaultBranch = main
+[core]
+	fsmonitor = true
