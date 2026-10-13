@@ -139,26 +139,3 @@ properties:
       settings:
         id: Daum.PotPlayer
         source: winget
-    ########################################
-    ### Configure settings
-    ########################################
-    ### Git Configure UserName
-    - resource: GitDsc/GitConfigUserName
-      directives:
-        description: Configure Git UserName
-        allowPrerelease: true
-      dependsOn:
-        - git
-      settings:
-         UserName: "fpsppty"
-         ConfigLocation: "Global"
-    ### Git Configure Email
-    - resource: GitDsc/GitConfigUserEmail
-      directives:
-        description: Configure Git
-        allowPrerelease: true
-      dependsOn:
-        - git
-      settings:
-         UserEmail: "128275033+fpsppty@users.noreply.github.com"
-         ConfigLocation: "Global"
