@@ -69,14 +69,14 @@ properties:
       settings:
         id: GitHub.cli
         source: winget
-    ### Install Chezmoi
+    ### Install dotter
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: chezmoi
+      id: dotter
       directives:
-        description: Install chezmoi
+        description: Install dotter
         allowPrerelease: true
       settings:
-        id: twpayne.chezmoi
+        id: SuperCuber.Dotter
         source: winget
     ### Install Powershell
     - resource: Microsoft.WinGet.DSC/WinGetPackage

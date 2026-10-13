@@ -1,0 +1,24 @@
+[settings]
+default_target_type = "symbolic"
+
+[default]
+depends = []
+
+[default.files]
+# ---- 共通 ----
+".gitconfig" = "~/.gitconfig"
+".config/mise" = "~/.config/mise"
+".config/nushell" = "~/.config/nushell"
+".config/starship" = "~/.config/starship"
+".config/gallery-dl" = "~/.config/gallery-dl"
+
+# ---- Windows のみ ----
+"Documents/PowerShell/Microsoft.PowerShell_profile.ps1" = { target = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1", type = "symbolic", if = "dotter.windows" }
+
+# ---- Linux(Unix) のみ ----
+".zshrc" = { target = "~/.zshrc", type = "symbolic", if = "dotter.unix" }
+".config/fcitx5" = { target = "~/.config/fcitx5", type = "symbolic", if = "dotter.unix" }
+".config/kanshi" = { target = "~/.config/kanshi", type = "symbolic", if = "dotter.unix" }
+".config/labwc" = { target = "~/.config/labwc", type = "symbolic", if = "dotter.unix" }
+".config/sheldon" = { target = "~/.config/sheldon", type = "symbolic", if = "dotter.unix" }
+".config/waybar" = { target = "~/.config/waybar", type = "symbolic", if = "dotter.unix" }
