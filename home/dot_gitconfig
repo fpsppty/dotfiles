@@ -7,3 +7,5 @@
 	defaultBranch = main
 [core]
 	fsmonitor = true
+[credential "https://codeberg.org"]
+	provider = generic
