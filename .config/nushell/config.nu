@@ -15,3 +15,10 @@ if (which mise | is-not-empty) {
 if (which starship | is-not-empty) {
     starship init nu | save --force ($vendor | path join "starship.nu")
 }
+
+def --env q [] {
+    let selected = (ghq list -p | fzf)
+    if ($selected | is-not-empty) {
+        cd $selected
+    }
+}
