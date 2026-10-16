@@ -8,6 +8,7 @@ depends = []
 # ---- 共通 ----
 ".gitconfig" = "~/.gitconfig"
 ".config/mise" = "~/.config/mise"
+".config/nvim" = "~/.config/nvim"
 ".config/nushell" = "~/.config/nushell"
 ".config/starship" = "~/.config/starship"
 ".config/gallery-dl" = "~/.config/gallery-dl"
