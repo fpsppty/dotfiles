@@ -41,6 +41,9 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- ファイル
+-- netrw を無効化してディレクトリは neo-tree に任せる
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true

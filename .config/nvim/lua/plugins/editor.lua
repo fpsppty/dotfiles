@@ -65,6 +65,13 @@ return {
     },
   },
 
+  -- 操作履歴を解析して次の Vim コマンドを提案する学習補助
+  {
+    'kamegoro/tobira.nvim',
+    event = 'VeryLazy',
+    opts = { lang = 'ja' },
+  },
+
   -- Markdown をその場でリッチに描画する
   {
     'MeanderingProgrammer/render-markdown.nvim',

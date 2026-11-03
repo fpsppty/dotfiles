@@ -36,7 +36,7 @@ return {
       options = {
         theme = 'auto',
         globalstatus = true,
-        disabled_filetypes = { statusline = { 'dashboard', 'oil' } },
+        disabled_filetypes = { statusline = { 'dashboard', 'neo-tree' } },
       },
     },
   },

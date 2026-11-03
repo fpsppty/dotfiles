@@ -63,6 +63,8 @@ return {
           if vim.api.nvim_get_current_buf() == ev.buf then
             vim.opt_local.foldmethod = 'expr'
             vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            -- 折りたたみは使えるようにしつつ、既定では全開で表示する
+            vim.opt_local.foldlevel = 99
           end
         end,
       })
