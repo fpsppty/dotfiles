@@ -139,3 +139,27 @@ properties:
       settings:
         id: Daum.PotPlayer
         source: winget
+    ### Install XnView MP
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: XnViewMP
+      directives:
+        description: Install XnView MP
+        allowPrerelease: true
+      settings:
+        id: XnSoft.XnViewMP
+        source: winget
+    ### Install Scoop (not available on winget; run official installer script)
+    - resource: PSDscResources/Script
+      id: scoop
+      dependsOn: [git]
+      directives:
+        description: Install Scoop package manager
+        allowPrerelease: true
+      settings:
+        GetScript: |
+          $scoopCmd = Get-Command scoop -ErrorAction SilentlyContinue
+          return @{ Result = if ($scoopCmd) { $scoopCmd.Source } else { '' } }
+        TestScript: |
+          return $null -ne (Get-Command scoop -ErrorAction SilentlyContinue)
+        SetScript: |
+          & ([scriptblock]::Create((irm get.scoop.sh))) -RunAsAdmin
