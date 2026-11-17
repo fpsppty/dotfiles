@@ -16,6 +16,17 @@ if (which starship | is-not-empty) {
     starship init nu | save --force ($vendor | path join "starship.nu")
 }
 
+def e [path?: path] {
+    let target = ($path | default $env.PWD)
+    if $nu.os-info.name == "windows" {
+        ^explorer $target
+    } else if $nu.os-info.name == "macos" {
+        ^open $target
+    } else {
+        ^xdg-open $target
+    }
+}
+
 def --env q [] {
     let selected = (ghq list -p | fzf)
     if ($selected | is-not-empty) {

@@ -14,6 +14,11 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 Import-Module PSFzf
 Set-PSFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
+function e {
+    param([string]$Path = (Get-Location).Path)
+    explorer.exe $Path
+}
+
 function q {
     ghq list -p | fzf | ForEach-Object {
         if ($_ -ne '') { Set-Location $_ }
